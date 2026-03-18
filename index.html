@@ -1,77 +1,72 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudor-Andrei Hălășag | Portfolio</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
 </head>
-<body data-theme="light" data-lang="en">
-    
-    <header class="main-header">
-        <nav class="nav-container">
-            <div class="brand-logo">&lt;TUDOR/&gt;</div>
-            <div class="nav-controls">
-                <select id="langSelect" class="lang-dropdown">
-                    <option value="en">English</option>
-                    <option value="ro">Romanian</option>
-                    <option value="it">Italian</option>
-                    <option value="fr">French</option>
-                    <option value="de">German</option>
-                    <option value="ar">Arabic</option>
-                    <option value="zh">Chinese</option>
-                </select>
-                <button id="themeToggle" class="theme-btn"><i class="fas fa-moon"></i></button>
-            </div>
+
+<body>
+
+<header class="main-header">
+    <div class="nav-container">
+        <div class="brand-logo">&lt;Dev/&gt;</div>
+        <nav>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <main>
-        <section class="hero-section">
-            <div class="hero-images">
-                <img src="profile.jpg" alt="Artsy Profile" class="img-artsy">
-                <img src="cv.jpg" alt="Official Profile" class="img-cv">
-            </div>
-            <h1 data-key="name">Tudor-Andrei Hălășag</h1>
-            <h2 data-key="title">Robotics & Industrial Engineering Student</h2>
-            <div class="contact-fast">
-                <a href="mailto:tudor.halasag@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/tudor-halasag/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <span><i class="fas fa-phone"></i> +40742131533</span>
-                <span><i class="fas fa-map-marker-alt"></i> Bucharest, RO</span>
-            </div>
-        </section>
+<section id="home" class="hero-section fade-in">
+    <h1 class="hero-name">Tudor-Andrei Hălășag</h1>
+    <p class="hero-title">Robotics & Industrial Engineering Student</p>
 
-        <section class="section">
-            <h3 data-key="about-title">Profile Description</h3>
-            <p data-key="about-text" class="profile-p">
-                I am Tudor-Andrei Hălășag, a Robotics and Industrial Engineering student at the Polytechnic University of Bucharest with a strong foundation in software development, embedded systems, and engineering design.
-            </p>
-        </section>
+    <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">Projects</a>
+        <a href="#about" class="btn btn-secondary">About</a>
+    </div>
+</section>
 
-        <section class="section">
-            <h3 data-key="projects-title">Key Projects</h3>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h4>Audio File Encryption (Python)</h4>
-                    <p data-key="p1">Implemented SHA-256 hashing to encrypt and decrypt audio files at binary level.</p>
-                </div>
-                <div class="project-card">
-                    <h4>Public Transport Ticketing (C++)</h4>
-                    <p data-key="p2">Simulated the full Bucharest transit network including metro, tram, and bus lines.</p>
-                </div>
-                <div class="project-card">
-                    <h4>Step-Down Transformer Design</h4>
-                    <p data-key="p3">Designed a functional transformer applying electromagnetic theory and winding calculations.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+<section id="about" class="section fade-in">
+    <h2>About</h2>
+    <p>
+        Passionate about engineering, systems, and real-world problem solving.
+    </p>
+</section>
 
-    <script src="js/main.js"></script>
+<section id="projects" class="section fade-in">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card fade-in">
+            <h3>SHA-256 Audio Encryption</h3>
+            <p>Encrypted audio files at binary level.</p>
+        </div>
+
+        <div class="project-card fade-in">
+            <h3>Bucharest Transport Simulator</h3>
+            <p>Full simulation of metro, tram and bus network.</p>
+        </div>
+
+        <div class="project-card fade-in">
+            <h3>Transformer Design</h3>
+            <p>Applied electromagnetic theory for real build.</p>
+        </div>
+
+    </div>
+</section>
+
+<script src="main.js"></script>
 </body>
 </html>

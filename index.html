@@ -2,163 +2,120 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Professional Portfolio - Developer CV</title>
-    
-    <script>
-        // Suppress Tailwind CDN warning
-        if (typeof console !== 'undefined' && console.warn) {
-            const originalWarn = console.warn;
-            console.warn = function(...args) {
-                if (args[0] && typeof args[0] === 'string' && args[0].includes('tailwindcss.com')) {
-                    return;
-                }
-                originalWarn.apply(console, args);
-            };
-        }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudor-Andrei Hălășag - Portfolio</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="body-main" data-theme="dark" data-lang="en" data-dir="ltr">
+<body data-theme="light" data-lang="en">
     
-    <div class="loader-screen" id="loader">
-        <div class="loader-content">
-            <div class="loader-code-text">
-                <div class="code-line" data-line="1">const portfolio = {</div>
-                <div class="code-line" data-line="2">  loading: true,</div>
-                <div class="code-line" data-line="3">  status: 'initializing...'</div>
-                <div class="code-line" data-line="4">};</div>
-            </div>
-            <div class="loader-spinner-wrapper"><div class="loader-spinner"></div></div>
-            <div class="loader-progress-wrapper"><div class="loader-progress-bar"></div></div>
-            <div class="loader-percentage" id="loaderPercent">0%</div>
-        </div>
-    </div>
-
-    <header class="main-header" id="header">
+    <header class="main-header">
         <nav class="nav-container">
-            <div class="nav-brand">
-                <div class="brand-logo">
-                    <span class="logo-bracket">&lt;</span><span class="logo-text">Dev</span><span class="logo-bracket">/&gt;</span>
-                </div>
-            </div>
-            <div class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link active" data-section="home">
-                    <i class="fas fa-home"></i>
-                    <span class="nav-text" data-text-en="Home" data-text-ar="الرئيسية">Home</span>
-                </a>
-                <a href="#about" class="nav-link" data-section="about">
-                    <i class="fas fa-user"></i>
-                    <span class="nav-text" data-text-en="About" data-text-ar="عني">About</span>
-                </a>
-                <a href="#skills" class="nav-link" data-section="skills">
-                    <i class="fas fa-code"></i>
-                    <span class="nav-text" data-text-en="Skills" data-text-ar="المهارات">Skills</span>
-                </a>
-                <a href="#experience" class="nav-link" data-section="experience">
-                    <i class="fas fa-briefcase"></i>
-                    <span class="nav-text" data-text-en="Experience" data-text-ar="الخبرة">Experience</span>
-                </a>
-                <a href="#projects" class="nav-link" data-section="projects">
-                    <i class="fas fa-rocket"></i>
-                    <span class="nav-text" data-text-en="Projects" data-text-ar="المشاريع">Projects</span>
-                </a>
-                <a href="#contact" class="nav-link" data-section="contact">
-                    <i class="fas fa-envelope"></i>
-                    <span class="nav-text" data-text-en="Contact" data-text-ar="التواصل">Contact</span>
-                </a>
-            </div>
+            <div class="brand-logo">&lt;TUDOR/&gt;</div>
             <div class="nav-controls">
-                <button class="lang-toggle" id="langToggle"><i class="fas fa-language"></i><span class="lang-text">AR</span></button>
-                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <select id="langSelect" class="lang-dropdown">
+                    <option value="en">English</option>
+                    <option value="ro">Romanian</option>
+                    <option value="it">Italian</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="ar">Arabic</option>
+                    <option value="zh">Chinese</option>
+                </select>
+                <button id="themeToggle" class="theme-btn"><i class="fas fa-moon"></i></button>
             </div>
         </nav>
     </header>
 
-    <main class="main-content">
+    <main>
         <section id="home" class="hero-section">
             <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-greeting"><span class="greeting-text" data-text-en="Hello, I'm" data-text-ar="مرحباً، أنا">Hello, I'm</span></div>
-                    <h1 class="hero-name">
-                        <span class="name-prefix">const</span> <span class="name-operator">=</span> 
-                        <span class="name-value">Developer</span><span class="name-suffix">;</span>
-                    </h1>
-                    <div class="hero-title">
-                        <span class="title-prefix">//</span>
-                        <span class="title-text" data-text-en="Full Stack Developer & UI/UX Designer" data-text-ar="مطور Full Stack & مصمم UI/UX">Full Stack Developer & UI/UX Designer</span>
-                    </div>
-                    <p class="hero-description" data-text-en="Passionate developer creating digital experiences." data-text-ar="مطور شغوف بإنشاء تجارب رقمية.">
-                        Passionate developer creating exceptional digital experiences with modern technologies.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary"><span data-text-en="Get In Touch" data-text-ar="تواصل معي">Get In Touch</span></a>
-                        <a href="#projects" class="btn btn-secondary"><span data-text-en="View Projects" data-text-ar="عرض المشاريع">View Projects</span></a>
-                    </div>
+                <div class="hero-images">
+                    <img src="profile.jpg" alt="Tudor Artsy" class="img-artsy">
+                    <img src="cv.jpg" alt="Tudor Official" class="img-cv">
+                </div>
+                <h1 data-key="name">Tudor-Andrei Hălășag</h1>
+                <h2 data-key="title">Robotics & Industrial Engineering Student</h2>
+                <p class="hero-desc" data-key="hero-desc">Building functional systems through code and engineering precision.</p>
+                <div class="contact-fast">
+                    <a href="mailto:tudor.halasag@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/tudor-halasag/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="tel:+40742131533"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section about-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-number">01</span>
-                    <h2 class="section-title"><span data-text-en="About Me" data-text-ar="عني">About Me</span></h2>
+        <section class="section">
+            <h3 data-key="about-title">Profile</h3>
+            <p data-key="about-text" class="profile-p">
+                I am Tudor-Andrei Hălășag, a Robotics and Industrial Engineering student at the Polytechnic University of Bucharest...
+            </p>
+        </section>
+
+        <section class="section">
+            <h3 data-key="skills-title">Technical Expertise</h3>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h4 data-key="skill-prog">Programming</h4>
+                    <ul>
+                        <li>C++ (OOP, Algorithms)</li>
+                        <li>Python (Cryptography, Scripting)</li>
+                        <li>C#, Java, Oracle SQL</li>
+                        <li>HTML & JavaScript</li>
+                    </ul>
                 </div>
-                <div class="about-content">
-                    <p class="about-text" data-text-en="I'm a passionate Full Stack Developer with 5+ years experience." data-text-ar="أنا مطور Full Stack شغوف مع خبرة تزيد عن 5 سنوات.">
-                        I'm a passionate Full Stack Developer with over 5 years of experience in building modern web applications.
-                    </p>
+                <div class="skill-box">
+                    <h4 data-key="skill-eng">Engineering Tools</h4>
+                    <ul>
+                        <li>AutoCAD Mechanical</li>
+                        <li>MATLAB & LabVIEW</li>
+                        <li>LTspice / Tina-TI</li>
+                        <li>Arduino & Embedded I/O</li>
+                    </ul>
+                </div>
+                <div class="skill-box">
+                    <h4 data-key="skill-prof">Professional</h4>
+                    <ul>
+                        <li>Advanced Excel & Reporting</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Comax Smart Retail ERP</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="section experience-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-number">03</span>
-                    <h2 class="section-title"><span data-text-en="Experience" data-text-ar="الخبرة">Experience</span></h2>
+        <section class="section">
+            <h3 data-key="projects-title">Key Projects</h3>
+            <div class="projects-list">
+                <div class="project-item">
+                    <h5>Audio File Encryption (Python)</h5>
+                    <p data-key="p1">Implemented SHA-256 hashing to encrypt and decrypt audio files at binary level.</p>
                 </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <div class="timeline-header"><span class="timeline-year">2022 - Present</span></div>
-                            <h3 class="timeline-title" data-text-en="Senior Full Stack Developer" data-text-ar="مطور Full Stack أول">Senior Full Stack Developer</h3>
-                            <p class="timeline-description" data-text-en="Leading a team of developers in building complex web applications." data-text-ar="قيادة فريق من المطورين في بناء تطبيقات ويب معقدة.">
-                                Leading a team of developers in building complex web applications using React and Node.js.
-                            </p>
-                        </div>
-                    </div>
+                <div class="project-item">
+                    <h5>Public Transport Ticketing (C++)</h5>
+                    <p data-key="p2">Simulated the full Bucharest transit network using advanced OOP design.</p>
+                </div>
+                <div class="project-item">
+                    <h5>Arduino Embedded Systems</h5>
+                    <p data-key="p3">Controlled LCDs, sensors, and motors simultaneously via microcontroller programming.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section contact-section">
-            <div class="section-container">
-                <div class="section-header">
-                    <span class="section-number">05</span>
-                    <h2 class="section-title"><span data-text-en="Contact" data-text-ar="التواصل">Contact</span></h2>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group"><input type="text" class="form-input" placeholder="Name" data-placeholder-en="Name" data-placeholder-ar="الاسم" required></div>
-                    <div class="form-group"><input type="email" class="form-input" placeholder="Email" data-placeholder-en="Email" data-placeholder-ar="البريد الإلكتروني" required></div>
-                    <div class="form-group"><textarea class="form-input" rows="5" placeholder="Message" data-placeholder-en="Message" data-placeholder-ar="الرسالة" required></textarea></div>
-                    <button type="submit" class="btn btn-primary"><span data-text-en="Send Message" data-text-ar="إرسال الرسالة">Send Message</span></button>
-                </form>
+        <section class="section contact-footer">
+            <h3 data-key="contact-title">Contact</h3>
+            <div class="contact-details">
+                <p><strong>Email:</strong> tudor.halasag@gmail.com</p>
+                <p><strong>Phone:</strong> +40742131533</p>
+                <p><strong>Location:</strong> Bucharest, Romania</p>
             </div>
         </section>
     </main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

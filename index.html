@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tudor-Andrei Hălășag - Portfolio</title>
+    <title>Tudor-Andrei Hălășag | Portfolio</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-theme="light" data-lang="en">
@@ -32,86 +31,43 @@
     </header>
 
     <main>
-        <section id="home" class="hero-section">
-            <div class="hero-container">
-                <div class="hero-images">
-                    <img src="profile.jpg" alt="Tudor Artsy" class="img-artsy">
-                    <img src="cv.jpg" alt="Tudor Official" class="img-cv">
-                </div>
-                <h1 data-key="name">Tudor-Andrei Hălășag</h1>
-                <h2 data-key="title">Robotics & Industrial Engineering Student</h2>
-                <p class="hero-desc" data-key="hero-desc">Building functional systems through code and engineering precision.</p>
-                <div class="contact-fast">
-                    <a href="mailto:tudor.halasag@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/tudor-halasag/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="tel:+40742131533"><i class="fas fa-phone"></i></a>
-                </div>
+        <section class="hero-section">
+            <div class="hero-images">
+                <img src="profile.jpg" alt="Artsy Profile" class="img-artsy">
+                <img src="cv.jpg" alt="Official Profile" class="img-cv">
+            </div>
+            <h1 data-key="name">Tudor-Andrei Hălășag</h1>
+            <h2 data-key="title">Robotics & Industrial Engineering Student</h2>
+            <div class="contact-fast">
+                <a href="mailto:tudor.halasag@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/tudor-halasag/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <span><i class="fas fa-phone"></i> +40742131533</span>
+                <span><i class="fas fa-map-marker-alt"></i> Bucharest, RO</span>
             </div>
         </section>
 
         <section class="section">
-            <h3 data-key="about-title">Profile</h3>
+            <h3 data-key="about-title">Profile Description</h3>
             <p data-key="about-text" class="profile-p">
-                I am Tudor-Andrei Hălășag, a Robotics and Industrial Engineering student at the Polytechnic University of Bucharest...
+                I am Tudor-Andrei Hălășag, a Robotics and Industrial Engineering student at the Polytechnic University of Bucharest with a strong foundation in software development, embedded systems, and engineering design.
             </p>
         </section>
 
         <section class="section">
-            <h3 data-key="skills-title">Technical Expertise</h3>
-            <div class="skills-grid">
-                <div class="skill-box">
-                    <h4 data-key="skill-prog">Programming</h4>
-                    <ul>
-                        <li>C++ (OOP, Algorithms)</li>
-                        <li>Python (Cryptography, Scripting)</li>
-                        <li>C#, Java, Oracle SQL</li>
-                        <li>HTML & JavaScript</li>
-                    </ul>
-                </div>
-                <div class="skill-box">
-                    <h4 data-key="skill-eng">Engineering Tools</h4>
-                    <ul>
-                        <li>AutoCAD Mechanical</li>
-                        <li>MATLAB & LabVIEW</li>
-                        <li>LTspice / Tina-TI</li>
-                        <li>Arduino & Embedded I/O</li>
-                    </ul>
-                </div>
-                <div class="skill-box">
-                    <h4 data-key="skill-prof">Professional</h4>
-                    <ul>
-                        <li>Advanced Excel & Reporting</li>
-                        <li>Adobe Illustrator</li>
-                        <li>Comax Smart Retail ERP</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
             <h3 data-key="projects-title">Key Projects</h3>
-            <div class="projects-list">
-                <div class="project-item">
-                    <h5>Audio File Encryption (Python)</h5>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h4>Audio File Encryption (Python)</h4>
                     <p data-key="p1">Implemented SHA-256 hashing to encrypt and decrypt audio files at binary level.</p>
                 </div>
-                <div class="project-item">
-                    <h5>Public Transport Ticketing (C++)</h5>
-                    <p data-key="p2">Simulated the full Bucharest transit network using advanced OOP design.</p>
+                <div class="project-card">
+                    <h4>Public Transport Ticketing (C++)</h4>
+                    <p data-key="p2">Simulated the full Bucharest transit network including metro, tram, and bus lines.</p>
                 </div>
-                <div class="project-item">
-                    <h5>Arduino Embedded Systems</h5>
-                    <p data-key="p3">Controlled LCDs, sensors, and motors simultaneously via microcontroller programming.</p>
+                <div class="project-card">
+                    <h4>Step-Down Transformer Design</h4>
+                    <p data-key="p3">Designed a functional transformer applying electromagnetic theory and winding calculations.</p>
                 </div>
-            </div>
-        </section>
-
-        <section class="section contact-footer">
-            <h3 data-key="contact-title">Contact</h3>
-            <div class="contact-details">
-                <p><strong>Email:</strong> tudor.halasag@gmail.com</p>
-                <p><strong>Phone:</strong> +40742131533</p>
-                <p><strong>Location:</strong> Bucharest, Romania</p>
             </div>
         </section>
     </main>

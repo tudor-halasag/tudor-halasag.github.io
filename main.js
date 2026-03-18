@@ -1,98 +1,55 @@
-/**
- * Main JavaScript for Professional Portfolio
- * Handles: Loader, Theme Toggle, Language Switch, and Smooth Scrolling
- */
+const translations = {
+    en: {
+        "name": "Tudor-Andrei Hălășag",
+        "title": "Robotics & Industrial Engineering Student",
+        "about-title": "Profile",
+        "about-text": "I am Tudor-Andrei Hălășag, a Robotics and Industrial Engineering student at the Polytechnic University of Bucharest...",
+        "skills-title": "Technical Expertise",
+        "projects-title": "Key Projects",
+        "contact-title": "Contact"
+    },
+    ro: {
+        "name": "Tudor-Andrei Hălășag",
+        "title": "Student Robotică și Inginerie Industrială",
+        "about-title": "Profil",
+        "about-text": "Sunt Tudor-Andrei Hălășag, student la Robotică și Inginerie Industrială la Universitatea Politehnica din București...",
+        "skills-title": "Expertiză Tehnică",
+        "projects-title": "Proiecte Cheie",
+        "contact-title": "Contact"
+    }
+    // Add it, fr, de, ar, zh similarly...
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Loading Screen Logic
-    const loader = document.getElementById('loader');
-    const loaderPercent = document.getElementById('loaderPercent');
-    let progress = 0;
-
-    // Simulate loading progress
-    const interval = setInterval(() => {
-        progress += Math.floor(Math.random() * 10) + 1;
-        if (progress >= 100) {
-            progress = 100;
-            clearInterval(interval);
-            setTimeout(() => {
-                loader.classList.add('hidden'); // Matches CSS .loader-screen.hidden [cite: 46]
-                document.body.style.overflow = 'auto';
-            }, 500);
-        }
-        loaderPercent.textContent = `${progress}%`;
-    }, 100);
-
-    // 2. Theme Toggle (Dark/Light)
-    const themeToggle = document.getElementById('themeToggle');
+    const themeBtn = document.getElementById('themeToggle');
+    const langSelect = document.getElementById('langSelect');
     const body = document.body;
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        body.setAttribute('data-theme', newTheme);
+    // --- Theme Logic ---
+    themeBtn.addEventListener('click', () => {
+        const isDark = body.getAttribute('data-theme') === 'dark';
+        body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        themeBtn.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+
+    // --- Language Logic ---
+    langSelect.addEventListener('change', (e) => {
+        const lang = e.target.value;
+        body.setAttribute('data-lang', lang);
         
-        // Update icon
-        const icon = themeToggle.querySelector('i');
-        icon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-    });
+        // Update RTL for Arabic
+        body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
-    // 3. Language Toggle (English/Arabic)
-    const langToggle = document.getElementById('langToggle');
-    const langText = langToggle.querySelector('.lang-text');
-
-    langToggle.addEventListener('click', () => {
-        const currentLang = body.getAttribute('data-lang');
-        const newLang = currentLang === 'en' ? 'ar' : 'en';
-        const newDir = newLang === 'ar' ? 'rtl' : 'ltr';
-
-        // Update body attributes for CSS selectors [cite: 40]
-        body.setAttribute('data-lang', newLang);
-        body.setAttribute('data-dir', newDir);
-        body.dir = newDir;
-
-        // Toggle button text
-        langText.textContent = newLang === 'en' ? 'AR' : 'EN';
-
-        // Switch all translatable text
-        document.querySelectorAll('[data-text-en]').forEach(el => {
-            el.textContent = el.getAttribute(`data-text-${newLang}`);
-        });
-
-        // Switch all placeholders
-        document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-            el.placeholder = el.getAttribute(`data-placeholder-${newLang}`);
-        });
-    });
-
-    // 4. Active Navigation Link on Scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (translations[lang] && translations[lang][key]) {
+                el.innerText = translations[lang][key];
             }
         });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // 5. Mobile Menu Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navMenu.classList.toggle('show'); // Ensure your CSS handles .nav-menu.show
     });
 });

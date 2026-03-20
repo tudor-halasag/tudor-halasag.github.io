@@ -1,72 +1,382 @@
-<section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Experience & Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2021 - Present</div>
-                        <h3 class="timeline-title">B.Sc. in Robotics & Industrial Engineering</h3>
-                        <ul class="timeline-bullets">
-                            <li>Focus on automated systems and manufacturing optimization.</li>
-                            <li>Advanced CAD modeling and structural analysis.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023 - 2024</div>
-                        <h3 class="timeline-title">Intern - Robotics Lab</h3>
-                        <ul class="timeline-bullets">
-                            <li>Developed Arduino-based prototypes for sensory feedback.</li>
-                            <li>Maintained and calibrated industrial robotic arms.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tudor-Andrei Hălășag — Robotics & Industrial Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <span class="project-tech">C++ & Arduino</span>
-                    <h3 class="project-title">Autonomous Path-Finder</h3>
-                    <p>A small-scale robot using ultrasonic sensors and PID control to navigate complex environments.</p>
-                </div>
-                <div class="project-card">
-                    <span class="project-tech">Autodesk Inventor</span>
-                    <h3 class="project-title">3D Engine Assembly</h3>
-                    <p>Complete digital twin of a 4-cylinder engine with motion study and stress analysis.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" placeholder="Your Name">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" placeholder="Your Email">
-                    </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea placeholder="Tell me about your project..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">T.A.H</span>
+      <ul class="nav-links">
+        <li><a href="#about" data-section="about">About</a></li>
+        <li><a href="#experience" data-section="experience">Experience</a></li>
+        <li><a href="#education" data-section="education">Education</a></li>
+        <li><a href="#projects" data-section="projects">Projects</a></li>
+        <li><a href="#skills" data-section="skills">Skills</a></li>
+        <li><a href="#contact" data-section="contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon">☀</span>
+        </button>
+        <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <script src="main.js"></script>
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-photo-wrap fade-in" style="--delay:0s">
+        <div class="hero-photo">
+          <img src="photo.jpg" alt="Tudor-Andrei Hălășag" onerror="this.style.display='none';this.parentElement.classList.add('photo-placeholder')" />
+        </div>
+        <div class="hero-photo-ring"></div>
+      </div>
+      <div class="hero-text">
+        <p class="hero-eyebrow fade-in" style="--delay:0.1s">Bucharest, Romania</p>
+        <h1 class="hero-name fade-in" style="--delay:0.2s">Tudor-Andrei<br/><span class="name-accent">Hălășag</span></h1>
+        <p class="hero-title fade-in" style="--delay:0.35s">Robotics &amp; Industrial Engineering Student</p>
+        <p class="hero-tagline fade-in" style="--delay:0.5s">I build things — in code, in CAD, and in real life.</p>
+        <div class="hero-actions fade-in" style="--delay:0.65s">
+          <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.77s.78-1.77 1.75-1.77 1.75.79 1.75 1.77-.78 1.77-1.75 1.77zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.61z"/></svg>
+            LinkedIn
+          </a>
+          <a href="cv.pdf" download class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+          <a href="mailto:tudor.halasag@example.com" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label scroll-fade">01 / About</div>
+      <div class="about-grid">
+        <h2 class="section-heading scroll-fade">Who I am</h2>
+        <div class="about-body scroll-fade">
+          <p>Robotics and Industrial Engineering student with hands-on programming experience in C++, Python, and C#, practical skills in CAD design (Autodesk Inventor, AutoCAD Mechanical), simulation (MATLAB), and embedded systems (Arduino). I enjoy building things — whether that's writing code, designing systems, or solving engineering problems from scratch.</p>
+          <p>Committed to continuous self-development through independent projects, I bring a detail-focused and analytically minded approach to everything I work on.</p>
+          <div class="about-stats">
+            <div class="stat scroll-fade">
+              <span class="stat-num">6+</span>
+              <span class="stat-label">Personal Projects</span>
+            </div>
+            <div class="stat scroll-fade">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Languages / Tools</span>
+            </div>
+            <div class="stat scroll-fade">
+              <span class="stat-num">C2</span>
+              <span class="stat-label">English Level</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-label scroll-fade">02 / Experience</div>
+      <h2 class="section-heading scroll-fade">Work Experience</h2>
+      <div class="timeline scroll-fade">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Barista &amp; Assistant Manager</h3>
+                <p class="timeline-company">5 TO GO EUROPE HOLDING SRL</p>
+              </div>
+              <span class="timeline-date">Mar – Sept 2023</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Managed transactions and operational data using Comax Smart Retail (ERP/POS) and Excel, maintaining 100% cash-handling accuracy and supporting inventory and sales tracking.</li>
+              <li>Improved peak-hour service efficiency by 15–20% through consistent preparation of specialty coffee and beverages.</li>
+              <li>Supported shift supervision, team coordination, and opening/closing procedures, developing leadership and workflow management skills.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="section-label scroll-fade">03 / Education</div>
+      <h2 class="section-heading scroll-fade">Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card scroll-fade">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-body">
+            <span class="edu-date">2022 – Present</span>
+            <h3 class="edu-title">BSc Robotics &amp; Industrial Engineering</h3>
+            <p class="edu-school">Polytechnic University of Bucharest</p>
+            <ul class="edu-bullets">
+              <li>Faculty of Industrial Engineering and Robotics</li>
+              <li>Core coursework in automation, control systems, CAD/CAM, embedded systems, and manufacturing engineering</li>
+            </ul>
+          </div>
+        </div>
+        <div class="edu-card scroll-fade">
+          <div class="edu-icon">🏫</div>
+          <div class="edu-body">
+            <span class="edu-date">2017 – 2021</span>
+            <h3 class="edu-title">Baccalaureate Diploma</h3>
+            <p class="edu-school">"Mihail Kogălniceanu" National College</p>
+            <ul class="edu-bullets">
+              <li>Mathematics–Informatics specialisation</li>
+              <li>Strong foundation in mathematics, physics, and computer science</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-label scroll-fade">04 / Projects</div>
+      <h2 class="section-heading scroll-fade">Selected Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card scroll-fade">
+          <div class="project-top">
+            <span class="project-icon">🔐</span>
+            <span class="project-badge">Python</span>
+          </div>
+          <h3 class="project-title">Audio File Encryption / Decryption</h3>
+          <p class="project-desc">Implemented SHA-256 hashing for file-level audio encryption and decryption, ensuring data integrity and secure storage of audio assets.</p>
+        </div>
+
+        <div class="project-card scroll-fade">
+          <div class="project-top">
+            <span class="project-icon">🚌</span>
+            <span class="project-badge">C++</span>
+          </div>
+          <h3 class="project-title">Public Transport Ticketing System</h3>
+          <p class="project-desc">OOP-based simulation of Bucharest's transit network, modelling ticket types, passes, and expiry logic with a focus on real-world fidelity.</p>
+        </div>
+
+        <div class="project-card scroll-fade">
+          <div class="project-top">
+            <span class="project-icon">♟️</span>
+            <span class="project-badge">C++</span>
+          </div>
+          <h3 class="project-title">Chess Constraint Solver</h3>
+          <p class="project-desc">Programmed combinatorial solutions including the N-Queens placement algorithm, exploring backtracking and constraint-propagation techniques.</p>
+        </div>
+
+        <div class="project-card scroll-fade">
+          <div class="project-top">
+            <span class="project-icon">📄</span>
+            <span class="project-badge">C#</span>
+          </div>
+          <h3 class="project-title">CV Generator Tool</h3>
+          <p class="project-desc">Utility application for automated document generation with structured data output, streamlining the creation of professional CVs.</p>
+        </div>
+
+        <div class="project-card scroll-fade">
+          <div class="project-top">
+            <span class="project-icon">⚡</span>
+            <span class="project-badge">Engineering</span>
+          </div>
+          <h3 class="project-title">Step-Down Transformer Design</h3>
+          <p class="project-desc">Designed a transformer from given electrical parameters, applying electromagnetic theory and circuit analysis to meet performance specifications.</p>
+        </div>
+
+        <div class="project-card scroll-fade">
+          <div class="project-top">
+            <span class="project-icon">🤖</span>
+            <span class="project-badge">Hardware</span>
+          </div>
+          <h3 class="project-title">Arduino &amp; Embedded Systems</h3>
+          <p class="project-desc">Programmed microcontrollers and interfaced peripherals including LCD displays, sensors, stepper motors, and speakers for real-world automation tasks.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-label scroll-fade">05 / Skills</div>
+      <h2 class="section-heading scroll-fade">Skills &amp; Tools</h2>
+      <div class="skills-groups">
+
+        <div class="skill-group scroll-fade">
+          <h3 class="skill-group-title">
+            <span class="skill-group-icon">💻</span> Programming
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">ORACLE SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group scroll-fade">
+          <h3 class="skill-group-title">
+            <span class="skill-group-icon">⚙️</span> Engineering Tools
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">AutoCAD Mechanical</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">LabVIEW</span>
+            <span class="skill-tag">LTspice</span>
+            <span class="skill-tag">Tina-TI</span>
+            <span class="skill-tag">Spyder</span>
+          </div>
+        </div>
+
+        <div class="skill-group scroll-fade">
+          <h3 class="skill-group-title">
+            <span class="skill-group-icon">🛠️</span> Other
+          </h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Microsoft Office Suite</span>
+            <span class="skill-tag">Adobe Illustrator</span>
+            <span class="skill-tag">Comax Smart Retail</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages & Interests -->
+  <section id="languages" class="section">
+    <div class="container">
+      <div class="section-label scroll-fade">06 / More</div>
+      <h2 class="section-heading scroll-fade">Languages &amp; Interests</h2>
+      <div class="lang-interests-grid">
+        <div class="lang-card scroll-fade">
+          <h3 class="card-subtitle">🌍 Languages</h3>
+          <ul class="lang-list">
+            <li>
+              <span class="lang-name">Romanian</span>
+              <span class="lang-level native">Native</span>
+            </li>
+            <li>
+              <span class="lang-name">English</span>
+              <span class="lang-level c2">C2 — Cambridge Certificate</span>
+            </li>
+            <li>
+              <span class="lang-name">Italian</span>
+              <span class="lang-level a2">A2 — Self-learning</span>
+            </li>
+          </ul>
+        </div>
+        <div class="interests-card scroll-fade">
+          <h3 class="card-subtitle">✨ Interests</h3>
+          <ul class="interests-list">
+            <li>
+              <span class="interest-icon">🎸</span>
+              <span><strong>Music</strong> — Multi-instrumentalist (guitar, bass, drums) &amp; DJ</span>
+            </li>
+            <li>
+              <span class="interest-icon">💪</span>
+              <span><strong>Sports</strong> — Gym &amp; outdoor fitness</span>
+            </li>
+            <li>
+              <span class="interest-icon">🌄</span>
+              <span><strong>Travel</strong> — Hiking trips &amp; exploration</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-label scroll-fade">07 / Contact</div>
+      <h2 class="section-heading scroll-fade">Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info scroll-fade">
+          <p class="contact-blurb">Open to internship opportunities, engineering challenges, and interesting conversations. Don't hesitate to reach out.</p>
+          <div class="contact-links">
+            <a href="mailto:tudor.halasag@example.com" class="contact-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              tudor.halasag@example.com
+            </a>
+            <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="contact-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.77s.78-1.77 1.75-1.77 1.75.79 1.75 1.77-.78 1.77-1.75 1.77zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.61z"/></svg>
+              LinkedIn Profile
+            </a>
+          </div>
+        </div>
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form scroll-fade">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2025 Tudor-Andrei Hălășag</span>
+      <span class="footer-sep">·</span>
+      <span>Built with care &amp; clean code</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>

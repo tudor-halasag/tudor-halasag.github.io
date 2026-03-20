@@ -336,14 +336,18 @@ button { cursor: pointer; font-family: var(--fb); border: none; background: none
 /* ═══════════════════════════════════════════════════
    ABOUT
 ═══════════════════════════════════════════════════ */
-.about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 4rem; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 4rem; align-items: start; }
 .about-grid .sec-heading { position: sticky; top: calc(var(--nav-h) + 2rem); margin-bottom: 0; }
 .about-photo-wrap {
   width: 100%;
-  border-radius: 18px;
-  overflow: hidden;
   margin-top: 0.5rem;
   position: relative;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  isolation: isolate;
+  background: #000;
   /* animated gradient border */
   padding: 3px;
   background: conic-gradient(var(--g-accent) 0%, var(--g-mid) 40%, var(--g-light) 60%, var(--g-accent) 100%);

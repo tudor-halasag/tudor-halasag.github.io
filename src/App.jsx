@@ -560,12 +560,17 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="footer">
-        <div className="container footer-inner">
-          <span>© 2026 Tudor-Andrei Hălășag</span>
-          <span className="footer-sep">·</span>
-          <span>Built with care</span>
-        </div>
-      </footer>
+  <div className="container footer-inner">
+    <a href="./" className="footer-logo-link" aria-label="Home">
+      <img src="tahlogo.svg" alt="TAH" className="footer-logo-img"
+        onError={e => { e.target.style.display='none' }} />
+    </a>
+    <span className="footer-sep">·</span>
+    <span>© 2026 Tudor-Andrei Hălășag</span>
+    <span className="footer-sep">·</span>
+    <span>Built with care</span>
+  </div>
+</footer>
     </div>
   )
 }

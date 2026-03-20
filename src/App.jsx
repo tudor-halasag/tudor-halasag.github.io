@@ -446,8 +446,8 @@ export default function App() {
         <div className="container">
           <p className="sec-label sf">01 / About</p>
           <div className="about-grid">
-            <h2 className="sec-heading sf">Who I am</h2>
             <div className="about-body sf">
+              <h2 className="sec-heading sf">Who I am</h2>
               <p>Robotics and Industrial Engineering student with hands-on programming experience in C++, Python, and C#, practical skills in CAD design (Autodesk Inventor, AutoCAD Mechanical), simulation (MATLAB), and embedded systems (Arduino). I enjoy building things — whether that's writing code, designing systems, or solving engineering problems from scratch.</p>
               <p>Committed to continuous self-development through independent projects, I bring a detail-focused and analytically minded approach to everything I work on.</p>
               <div className="stats">
@@ -455,11 +455,11 @@ export default function App() {
                   <div key={l} className="stat sf"><span className="stat-n">{n}</span><span className="stat-l">{l}</span></div>
                 ))}
               </div>
-              <div className="about-photo-wrap sf">
-                <div className="about-photo-inner">
-                  <img src="photo.jpg" alt="Tudor-Andrei Hălășag" className="about-photo"
-                    onError={e => { e.target.parentElement.parentElement.style.display='none' }} />
-                </div>
+            </div>
+            <div className="about-photo-wrap sf">
+              <div className="about-photo-inner">
+                <img src="photo.jpg" alt="Tudor-Andrei Hălășag" className="about-photo"
+                  onError={e => { e.target.parentElement.parentElement.style.display='none' }} />
               </div>
             </div>
           </div>

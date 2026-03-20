@@ -336,7 +336,9 @@ button { cursor: pointer; font-family: var(--fb); border: none; background: none
 /* ═══════════════════════════════════════════════════
    ABOUT
 ═══════════════════════════════════════════════════ */
-.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 4rem; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; grid-template-rows: auto; gap: 2rem 4rem; align-items: start; }
+.about-grid .about-body { grid-column: 1; }
+.about-grid .about-photo-wrap { grid-column: 2; grid-row: 1; }
 .about-grid .sec-heading { position: sticky; top: calc(var(--nav-h) + 2rem); margin-bottom: 0; }
 .about-photo-wrap {
   width: 100%;

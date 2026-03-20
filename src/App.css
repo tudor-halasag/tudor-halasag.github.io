@@ -342,25 +342,19 @@ button { cursor: pointer; font-family: var(--fb); border: none; background: none
 .about-grid .sec-heading { position: sticky; top: calc(var(--nav-h) + 2rem); margin-bottom: 0; }
 .about-photo-wrap {
   width: 100%;
-  margin-top: 0.5rem;
   position: relative;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.15);
   overflow: hidden;
   box-shadow: 0 8px 40px rgba(0,0,0,0.6);
   isolation: isolate;
   background: #000;
-  /* animated gradient border */
-  padding: 3px;
-  background: conic-gradient(var(--g-accent) 0%, var(--g-mid) 40%, var(--g-light) 60%, var(--g-accent) 100%);
-  animation: borderSpin 6s linear infinite;
-  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
 }
 @keyframes borderSpin {
   to { filter: hue-rotate(30deg); }
 }
 .about-photo-inner {
-  border-radius: 17px;
+  border-radius: 20px;
   overflow: hidden;
   width: 100%;
 }
@@ -371,6 +365,8 @@ button { cursor: pointer; font-family: var(--fb); border: none; background: none
   object-position: center 15%;
   display: block;
   transition: transform 0.6s var(--ease);
+  mix-blend-mode: normal;
+  filter: none;
 }
 .about-photo-wrap:hover .about-photo { transform: scale(1.03); }
 .about-body { display: flex; flex-direction: column; gap: 1.25rem; }

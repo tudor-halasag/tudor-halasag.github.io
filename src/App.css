@@ -521,6 +521,11 @@ button { cursor: pointer; font-family: var(--fb); border: none; background: none
   .edu-grid { grid-template-columns:1fr; }
   .li-grid { grid-template-columns:1fr; }
   .contact-grid { grid-template-columns:1fr; }
+  /* ABOUT — stack vertically on mobile */
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-grid .about-body { grid-column: 1; grid-row: 2; }
+  .about-grid .about-photo-wrap { grid-column: 1; grid-row: 1; }
+  .about-photo { height: 380px; object-position: center 10%; }
 }
 @media (max-width: 480px) {
   .container { padding:0 1.25rem; }

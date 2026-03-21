@@ -86,7 +86,7 @@ button { cursor: pointer; font-family: var(--fb); border: none; background: none
 }
 .nav-logo-link:hover { opacity: 0.65; transform: scale(0.97); }
 .nav-logo-img {
-  height: 100px; width: auto;
+  height: 120px; width: auto;
   filter: brightness(0) invert(1);
   transition: filter 0.3s;
   display: block;

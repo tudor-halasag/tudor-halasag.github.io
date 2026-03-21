@@ -78,8 +78,9 @@ const EDU_DATA = [
     school:'Polytechnic University of Bucharest',
     spec:'Faculty of Industrial Engineering and Robotics',
     bullets:[
-      'Core coursework: automation, control systems, CAD/CAM, embedded systems, manufacturing engineering',
-      'Arduino Project Lab — designed and built embedded systems including sensor arrays, motor controllers, and display interfaces',
+      'Core coursework in automation, control systems, CAD/CAM, embedded systems, and manufacturing engineering — applied through hands-on lab work and real engineering problem-solving.',
+      'Architected and deployed embedded systems projects in Arduino lab, including sensor arrays, motor controllers, and display interfaces — bridging hardware and software from the ground up.',
+      'Strong mathematical and physics foundation underpinning all technical work across programming, simulation, and design.',
     ],
   },
   {
@@ -88,7 +89,8 @@ const EDU_DATA = [
     school:'"Mihail Kogălniceanu" National College',
     spec:'Mathematics–Informatics specialisation',
     bullets:[
-      'Strong foundation in mathematics, physics, and computer science',
+      '>Intensive track in advanced mathematics, developing the analytical rigour that underpins every technical project undertaken since.',
+      '>Built a foundational command of programming and algorithms through C++ and Python — skills that were subsequently self-extended far beyond the curriculum.',
     ],
   },
 ]
@@ -242,9 +244,9 @@ function ExperienceCard() {
       </div>
       <div className="expand-body" ref={ref}>
         <ul className="tl-bullets">
-          <li>Managed transactions and operational data using Comax Smart Retail (ERP/POS) and Excel, maintaining 100% cash-handling accuracy and supporting inventory and sales tracking.</li>
-          <li>Improved peak-hour service efficiency by 15–20% through consistent preparation of specialty coffee and beverages.</li>
-          <li>Supported shift supervision, team coordination, and opening/closing procedures, developing leadership and workflow management skills.</li>
+          <p>Directed high-volume retail operations with 100% cash-handling accuracy — managed ERP/POS data using Comax Smart Retail and Excel, supporting inventory tracking and financial reporting.</p>
+<p>Consistently optimised service workflow during peak hours, improving efficiency by 15–20% through disciplined preparation and process management.</p>
+<p>Trusted with shift leadership, team coordination, and full opening/closing responsibility — demonstrating operational reliability and management composure under pressure.</p>
         </ul>
       </div>
       <button className="expand-btn" style={{marginTop:'1rem'}} onClick={() => setOpen(o => !o)}>
@@ -432,7 +434,7 @@ export default function App() {
             Tudor-Andrei<br/><span className="accent">Hălășag</span>
           </h1>
           <p className="hero-title anim" style={{'--d':'0.35s'}}>Robotics &amp; Industrial Engineering Student</p>
-          <p className="hero-tagline anim" style={{'--d':'0.5s'}}>Where precision meets creativity.</p>
+          <p className="hero-tagline anim" style={{'--d':'0.5s'}}>Where precision meets execution.</p>
           <div className="hero-btns anim" style={{'--d':'0.65s'}}>
             <a href="https://www.linkedin.com/in/tudor-halasag/" target="_blank" rel="noopener" className="btn btn-primary"><LinkedInIcon/> LinkedIn</a>
             <a href="cv.pdf" download className="btn btn-outline"><DownloadIcon/> Download CV</a>
@@ -448,8 +450,10 @@ export default function App() {
           <div className="about-grid">
             <div className="about-body sf">
               <h2 className="sec-heading sf">Who I am</h2>
-              <p>Robotics and Industrial Engineering student with hands-on programming experience in C++, Python, and C#, practical skills in CAD design (Autodesk Inventor, AutoCAD Mechanical), simulation (MATLAB), and embedded systems (Arduino). I enjoy building things — whether that's writing code, designing systems, or solving engineering problems from scratch.</p>
-              <p>Committed to continuous self-development through independent projects, I bring a detail-focused and analytically minded approach to everything I work on.</p>
+              <p>Robotics and Industrial Engineering student at the Polytechnic University of Bucharest.</p>
+<p>I build things. In code — from cryptographic algorithms in Python to object-oriented city simulations in C++. In hardware — programming microcontrollers and wiring sensor arrays from scratch. In design — drafting technical schematics and modelling systems in AutoCAD and MATLAB.</p>
+<p>What sets me apart is not just the technical breadth — it is the discipline to pursue all of it independently, outside of any university requirement. I do not wait to be taught. I identify a problem, learn what I need, and execute.</p>
+<p>If you are looking for someone who hits the ground running and delivers — that is exactly what I do.</p>
               <div className="stats">
                 {[['6+','Personal Projects'],['5+','Languages / Tools'],['C2','English Level']].map(([n,l])=>(
                   <div key={l} className="stat sf"><span className="stat-n">{n}</span><span className="stat-l">{l}</span></div>

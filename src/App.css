@@ -335,9 +335,16 @@ button { cursor: pointer; font-family: var(--fb); border: none; background: none
 
 /* Works button in navbar */
 /* Works nav link — blue accent, same shape as nav-link */
-.works-nav-link {
+.works-mobile-link {
   color: #2d8fff !important;
-  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  text-shadow: 0 0 14px rgba(45,143,255,0.7);
+}
+.works-mobile-link:hover {
+  color: #6ab8ff !important;
+  background: rgba(45,143,255,0.1) !important;
+  text-shadow: 0 0 20px rgba(45,143,255,1);
 }
 .works-nav-link:hover {
   color: #2d8fff !important;

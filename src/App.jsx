@@ -208,7 +208,7 @@ function ChevronIcon({ open }) {
 function ProjectCard({ p }) {
   const { open, setOpen, ref } = useExpand()
   return (
-    <div className={`proj-card sf${open ? ' expanded' : ''}`}>
+    <div className={`proj-card${open ? ' expanded' : ''}`} style={{opacity:1, transform:'none'}}>
       <div className="proj-top">
         <span className="proj-icon">{p.icon}</span>
         <span className="proj-badge">{p.badge}</span>

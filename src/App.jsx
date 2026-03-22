@@ -551,7 +551,7 @@ export default function App() {
           <div className="proj-grid">
             {PROJECTS.map(p => <ProjectCard key={p.title} p={p}/>)}
           </div>
-          <a href="https://tudor-halasag.github.io/works" target="_blank" rel="noopener" className="works-card sf">
+          <a href="https://tudor-halasag.github.io/works" className="works-card sf">
             <div className="works-card-inner">
               <span className="works-card-label">Visual &amp; Engineering Works</span>
               <h3 className="works-card-title">See the full portfolio →</h3>

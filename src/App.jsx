@@ -553,7 +553,6 @@ export default function App() {
           </div>
           <a href="https://tudor-halasag.github.io/works" className="works-card sf">
             <div className="works-card-inner">
-              <span className="works-card-label">Visual &amp; Engineering Works</span>
               <h3 className="works-card-title">See the full portfolio →</h3>
               <p className="works-card-sub">Logo design, CAD models, music production &amp; more — all in one place.</p>
             </div>

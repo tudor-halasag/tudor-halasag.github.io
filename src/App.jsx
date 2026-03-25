@@ -487,7 +487,7 @@ export default function App() {
           <p className="hero-tagline anim" style={{'--d':'0.5s'}}>Where precision meets execution.</p>
           <div className="hero-btns anim" style={{'--d':'0.65s'}}>
             <a href="https://www.linkedin.com/in/tudor-halasag/" target="_blank" rel="noopener" className="btn btn-primary"><LinkedInIcon/> LinkedIn</a>
-            <a href="cv.pdf" download className="btn btn-outline"><DownloadIcon/> Download CV</a>
+            <a href="CV TUDOR ANDREI HĂLĂȘAG.pdf" download className="btn btn-outline"><DownloadIcon/> Download CV</a>
             <a href="mailto:tudor.halasag@gmail.com" className="btn btn-outline"><EmailIcon/> Email</a>
           </div>
         </div>

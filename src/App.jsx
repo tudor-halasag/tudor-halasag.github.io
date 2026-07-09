@@ -483,7 +483,7 @@ export default function App() {
             </div>
             <div className="photo-ring"/>
           </div>
-          <p className="eyebrow anim" style={{'--d':'0.1s'}}>Bucharest, Romania</p>
+          <p className="eyebrow anim" style={{'--d':'0.1s'}}>Brașov, Romania</p>
           <h1 className="hero-name anim" style={{'--d':'0.2s'}}>
             Tudor-Andrei<br/><span className="accent">Hălășag</span>
           </h1>

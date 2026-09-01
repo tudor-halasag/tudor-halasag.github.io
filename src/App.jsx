@@ -153,7 +153,7 @@ const EXPERIENCE_DATA = [
     role: 'Production Technologist Intern',
     company: 'Airbus Aerostructures',
     dept: 'Machining Department — Ghimbav, Brașov',
-    date: 'Jun 2025 – Present',
+    date: 'Jul 2026 – Present',
     bullets: [
       'Managed SAP Quality Management notifications, non-conformity tracking, and full process traceability across a high-precision aerospace CNC machining environment (Grob 350 / Grob 550).',
       'Conducted first-shift quality inspections and CNC setup verification — including Vericut simulation validation before production runs — preventing downstream defects in large-scale series.',

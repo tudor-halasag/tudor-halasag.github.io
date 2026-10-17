@@ -8,4 +8,6 @@ Personal portfolio and CV website built with React + Vite, featuring an animated
 - React + Vite
 - @shadergradient/react
 - Deployed via GitHub Actions → GitHub Pages
+
+
 Code: PolyForm-Strict-1.0.0. Content: CC-BY-NC-ND-4.0.
